@@ -1,3 +1,3 @@
 # Project_Hotel
 
-Zamysł projektu to funkcjonalna strona pomagająca właścicielom hotelu, pokoi kontrolować rezerwacje, obłożenie i płatności
+Idea of this project is to make a page of hotel in which you may make a reservation. Later on I plan on developing it so that I could observe how does this hotel prospere.
