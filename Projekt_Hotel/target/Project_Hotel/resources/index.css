@@ -1,0 +1,26 @@
+body {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    color: #fff;
+    background: url(/resources/img/Gray_meetings.jpg)no-repeat center center fixed;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+span.transbox {
+    margin: 15px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+span.transbox {
+    margin: 2%;
+    font-weight: bold;
+    color: #000000;
+}

@@ -7,25 +7,16 @@ public class Rooms {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    String roomType;
     String roomDesc;
-    int roomQuantity;
     int roomCost;
+    String roomType;
 
-    public int getRoomQuantity() {
-        return roomQuantity;
+    public String getRoomType() {
+        return roomType;
     }
 
-    public void setRoomQuantity(int roomQuantity) {
-        this.roomQuantity = roomQuantity;
-    }
-
-    public int getRoomCost() {
-        return roomCost;
-    }
-
-    public void setRoomCost(int roomCost) {
-        this.roomCost = roomCost;
+    public void setRoomType(String roomType) {
+        this.roomType = roomType;
     }
 
     public User getUser() {
@@ -36,11 +27,18 @@ public class Rooms {
         this.user = user;
     }
 
+
+    public int getRoomCost() {
+        return roomCost;
+    }
+
+    public void setRoomCost(int roomCost) {
+        this.roomCost = roomCost;
+    }
+
+
     @ManyToOne
     User user;
-    @Lob
-    @Column(name="ROOM_IMAGE", nullable=false, columnDefinition="mediumblob")
-    private byte[] image;
 
 
     public Long getId() {
@@ -51,13 +49,6 @@ public class Rooms {
         this.id = id;
     }
 
-    public String getRoomType() {
-        return roomType;
-    }
-
-    public void setRoomType(String roomType) {
-        this.roomType = roomType;
-    }
 
     public String getRoomDesc() {
         return roomDesc;
@@ -67,11 +58,4 @@ public class Rooms {
         this.roomDesc = roomDesc;
     }
 
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
 }

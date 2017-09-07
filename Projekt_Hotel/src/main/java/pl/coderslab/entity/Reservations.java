@@ -1,17 +1,19 @@
 package pl.coderslab.entity;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
 
 @Entity
 public class Reservations {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    Date date;
+    LocalDate arrivalDate;
+    LocalDate checkoutDate;
     @ManyToOne
     Payment payment;
+    @OneToOne
+    Rooms rooms;
 
     public Payment getPayment() {
         return payment;
@@ -21,16 +23,13 @@ public class Reservations {
         this.payment = payment;
     }
 
-    public List<Rooms> getRooms() {
+    public Rooms getRooms() {
         return rooms;
     }
 
-    public void setRooms(List<Rooms> rooms) {
+    public void setRooms(Rooms rooms) {
         this.rooms = rooms;
     }
-
-    @OneToMany
-    List<Rooms> rooms;
 
     public Long getId() {
         return id;
@@ -40,22 +39,20 @@ public class Reservations {
         this.id = id;
     }
 
-    public Date getDate() {
-        return date;
+
+    public LocalDate getArrivalDate() {
+        return arrivalDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setArrivalDate(LocalDate arrivalDate) {
+        this.arrivalDate = arrivalDate;
     }
 
-    public Payment getPayments() {
-        return payments;
+    public LocalDate getCheckoutDate() {
+        return checkoutDate;
     }
 
-    public void setPayments(Payment payments) {
-        this.payments = payments;
+    public void setCheckoutDate(LocalDate checkoutDate) {
+        this.checkoutDate = checkoutDate;
     }
-
-    @OneToOne
-    Payment payments;
 }

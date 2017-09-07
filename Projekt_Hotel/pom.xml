@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>pl.coderslab</groupId>
-	<artifactId>Projekt_Hotel</artifactId>
+	<artifactId>Project_Hotel</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Projekt_Hotel Maven Webapp</name>
+	<name>Spring01hb Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<org.springframework-version>4.3.7.RELEASE</org.springframework-version>
@@ -54,6 +54,11 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.4.1.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.11.1.RELEASE</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -67,6 +72,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>Projekt_Hotel</finalName>
+		<finalName>Project_Hotel</finalName>
 	</build>
 </project>

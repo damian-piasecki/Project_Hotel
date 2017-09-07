@@ -1,18 +1,14 @@
 package pl.coderslab.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Payment {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String paymentType;
-    int valueToPay;
 
     public List<Reservations> getReservations() {
         return reservations;
@@ -41,11 +37,4 @@ public class Payment {
         this.paymentType = paymentType;
     }
 
-    public int getValueToPay() {
-        return valueToPay;
-    }
-
-    public void setValueToPay(int valueToPay) {
-        this.valueToPay = valueToPay;
-    }
 }

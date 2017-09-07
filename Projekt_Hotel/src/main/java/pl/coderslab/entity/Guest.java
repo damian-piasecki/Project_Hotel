@@ -12,7 +12,7 @@ public class Guest {
     String name;
     String lastname;
     @PESEL
-    long pesel;
+    String pesel;
     String docNumber;
     @ManyToOne
     Rooms rooms;
@@ -41,11 +41,11 @@ public class Guest {
         this.lastname = lastname;
     }
 
-    public long getPesel() {
+    public String getPesel() {
         return pesel;
     }
 
-    public void setPesel(long pesel) {
+    public void setPesel(String pesel) {
         this.pesel = pesel;
     }
 
