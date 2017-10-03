@@ -15,10 +15,11 @@
     <title>Title</title>
 </head>
 <body>
-<ul>
+<ul id="navibar">
     <li><a href="${pageContext.servletContext.contextPath}/">Home</a></li>
     <li><a href="${pageContext.servletContext.contextPath}/contact">Contact</a></li>
     <li><a href="${pageContext.servletContext.contextPath}/gallery">Gallery</a></li>
+    <li><a href="${pageContext.servletContext.contextPath}/rooms">Rooms</a></li>
 </ul>
 <div align="center">
 
@@ -35,6 +36,7 @@
             <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
         </div>
     </div>
+</div>
 
     <script>
         var slideIndex = 1;

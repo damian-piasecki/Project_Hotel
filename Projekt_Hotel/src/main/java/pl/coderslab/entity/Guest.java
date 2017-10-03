@@ -3,13 +3,16 @@ package pl.coderslab.entity;
 import org.hibernate.validator.constraints.pl.PESEL;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @NotNull
     String name;
+    @NotNull
     String lastname;
     @PESEL
     String pesel;

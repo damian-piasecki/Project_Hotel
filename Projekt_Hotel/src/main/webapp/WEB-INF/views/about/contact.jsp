@@ -14,10 +14,11 @@
     <title>Title</title>
 </head>
 <body>
-<ul>
+<ul id="navibar">
     <li><a href="${pageContext.servletContext.contextPath}/">Home</a></li>
     <li><a href="${pageContext.servletContext.contextPath}/contact">Contact</a></li>
     <li><a href="${pageContext.servletContext.contextPath}/gallery">Gallery</a></li>
+    <li><a href="${pageContext.servletContext.contextPath}/rooms">Rooms</a></li>
 </ul>
 <div class="container">
         <label for="fname">First Name</label>

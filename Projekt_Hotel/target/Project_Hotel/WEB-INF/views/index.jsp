@@ -40,6 +40,10 @@
             console.log('good:  ' + txtDate);
             return [true];
         }
+        /* create an array of days which need to be disabled */
+        var disabledDays = [<c:forEach items="${reservationsDates}" var="dates">
+            "${dates}",
+            </c:forEach>]
 
         /* create datepicker */
         jQuery(document).ready(function() {
@@ -50,6 +54,36 @@
                 constrainInput: true,
                 beforeShowDay: nationalDays
             });
+            function nationalDays(date) {
+                var  y = date.getFullYear(),m = date.getMonth(), d = date.getDate();
+                m += 1;
+                if(m<10)
+                    m= "0"+m;
+                if(d<10)
+                    d= "0"+d;
+                var txtDate = y + '-' + m + '-' + d;
+//            console.log('Checking (raw): ' + txtDate);
+                for (i = 0; i < disabledDays.length; i++) {
+                    if($.inArray(txtDate, disabledDays) != -1 || new Date() > date) {
+
+//                    console.log('bad:  ' + txtDate + ' / ' + disabledDays[i]);
+                        return [false];
+                    }
+                }
+                console.log('good:  ' + txtDate);
+                return [true];
+            }
+
+            /* create datepicker */
+            jQuery(document).ready(function() {
+                jQuery('.date').datepicker({
+                    minDate: new Date(),
+                    maxDate: new Date(2019,12,12),
+                    dateFormat: 'yy-mm-dd',
+                    constrainInput: true,
+                    beforeShowDay: nationalDays
+                });
+            });
         });
 
     </script>
@@ -57,10 +91,11 @@
     </style>
 </head>
 <body>
-<ul>
+<ul id="navibar">
     <li><a href="${pageContext.servletContext.contextPath}/">Home</a></li>
     <li><a href="${pageContext.servletContext.contextPath}/contact">Contact</a></li>
     <li><a href="${pageContext.servletContext.contextPath}/gallery">Gallery</a></li>
+    <li><a href="${pageContext.servletContext.contextPath}/rooms">Rooms</a></li>
 </ul>
 <br>
 <br>

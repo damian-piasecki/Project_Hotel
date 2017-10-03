@@ -13,13 +13,13 @@ import pl.coderslab.entity.Rooms;
 import pl.coderslab.services.ReservationsService;
 
 import javax.persistence.metamodel.SetAttribute;
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import static java.time.temporal.ChronoUnit.DAYS;
+
 
 @Controller
 public class ReservationsController {
@@ -86,6 +86,10 @@ public class ReservationsController {
         reservationsDao.saveReservations(reservation);
         return "reservation/guest";
     }
+    @RequestMapping(value = "/signup" , method = RequestMethod.GET)
+    public String guest(){
+        return "reservation/guest";
+    }
     @RequestMapping(value= "/contact", method = RequestMethod.GET)
     public String contact(){
         return "/about/contact";
@@ -93,5 +97,9 @@ public class ReservationsController {
     @RequestMapping(value= "/gallery", method = RequestMethod.GET)
     public String gallery(){
         return "/about/gallery";
+    }
+    @RequestMapping(value= "/rooms", method = RequestMethod.GET)
+    public String rooms(){
+        return "/about/rooms";
     }
 }

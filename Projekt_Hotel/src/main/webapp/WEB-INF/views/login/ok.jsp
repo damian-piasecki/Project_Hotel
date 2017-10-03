@@ -11,6 +11,7 @@
     <li><a href="${pageContext.servletContext.contextPath}/">Home</a></li>
     <li><a href="${pageContext.servletContext.contextPath}/contact">Contact</a></li>
     <li><a href="${pageContext.servletContext.contextPath}/gallery">Gallery</a></li>
+    <li><a href="${pageContext.servletContext.contextPath}/rooms">Rooms</a></li>
 </ul>
 <h1>Guest has been saved.</h1>
 </body>

@@ -24,26 +24,30 @@
 <body>
 <ul>
     <li><a href="${pageContext.servletContext.contextPath}/">Home</a></li>
-    <li><a href="${pageContext.servletContext.contextPath}/contact">Galeria</a></li>
-    <li><a href="${pageContext.servletContext.contextPath}/gallery">Kontakt</a></li>
+    <li><a href="${pageContext.servletContext.contextPath}/contact">Gallery</a></li>
+    <li><a href="${pageContext.servletContext.contextPath}/gallery">Contact</a></li>
+    <li><a href="${pageContext.servletContext.contextPath}/rooms">Rooms</a></li>
 </ul>
 <div class="container">
-<form method="post" action="/guestSingUp" >ppppp
+<form:form method="post" modelAttribute="guest">
     <label><b>First Name</b></label>
-    <input type="text" path="firstName" placeholder="Guest Name" name="uname" required/>
+    <form:errors path="firstname" />
+    <input type="text" path="firstname" placeholder="Guest Name" name="firsName" required/>
 
     <label><b>Last name</b></label>
-    <input type="text" path="lastName" placeholder="Guest Lastname" name="lastname" required/>
+    <form:errors path="lastname" />
+    <input type="text" path="lastname" placeholder="Guest Lastname" name="lastName" required/>
 
     <label><b>PESEL</b></label>
+    <form:errors path="pesel" />
     <input type="text" path="pesel" placeholder="12345678901" name="pesel" required/>
 
     <label><b>Document number</b></label>
-    <input type="text" path="docNumber" placeholder="AYX 142342" name="docnum" required/>
+    <input type="text" path="docNumber" placeholder="AYX 142342" name="docNum" required/>
 
 
     <button type="Pay now">Pay now</button>
-</form>
+</form:form>
 </div>
 </body>
 </html>
